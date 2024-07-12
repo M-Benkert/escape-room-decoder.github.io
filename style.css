@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.title, .tags, .icons, .buttons {
+    padding: 10px;
+    text-align: center;
+}
+
+/* title *********************************************************************/
+h1 {
+    margin: 10px 0;
+}
+
+/* tags **********************************************************************/
+.tags {
+    margin: 0 0 5px 0;
+    background-color: #000000;
+}
+
+.tags p {
+    margin: 5px 0;
+}
+
+/* keys and slots ************************************************************/
+.key-container, .slot-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* keys **********************************************************************/
+.key-container {
+    gap: 18px;
+}
+
+.key {
+    width: 24vw;
+    max-width: 120px; /* Max width for larger screens */
+    height: auto;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+/* slots *********************************************************************/
+.slot-container {
+    gap: 10px;
+}
+
+.slot-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slot {
+    width: 20vw;
+    max-width: 200px; /* Max width for larger screens */
+    height: 20vw;
+    max-height: 200px; /* Max height for larger screens */
+}
+
+.slot .key {
+    width: 18vw;
+    max-width: 195px; /* Max width for larger screens */
+    height: 18vw;
+    max-height: 195px; /* Max height for larger screens */
+}
+
+.slot {
+    border: 2px dashed #ccc;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.slot-button, .submit-button {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.slot-button:hover, .all-slots-button:hover {
+    background-color: #45a049;
+}
+
+/* keys and slots ************************************************************/
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.icons button {
+    width: 10vw;
+    margin: 5px 0;
+    padding: 8px 10px;
+    font-size: 16px;
+}
+
+.icon {
+    margin-right: 5px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons button {
+    width: 45%;
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 50%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50vh;
+}

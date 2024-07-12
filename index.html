@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Links</title>
+</head>
+<body>
+    <h1>Game Links</h1>
+    <div id="links"></div>
+
+    <script>
+        // Load JSON data and create links
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch("games.json")
+                .then(response => response.json())
+                .then(data => createLinks(data))
+                .catch(error => console.error('Error loading JSON:', error));
+        });
+
+        function createLinks(data) {
+            const linksContainer = document.getElementById('links');
+
+            for (const key in data) {
+                if (data.hasOwnProperty(key)) {
+                    const link = document.createElement('a');
+                    link.href = `decoder.html?game-name=${encodeURIComponent(key)}`;
+                    link.textContent = key;
+                    link.style.display = "block"; // To display each link on a new line
+                    linksContainer.appendChild(link);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

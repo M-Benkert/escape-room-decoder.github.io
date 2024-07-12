@@ -1,0 +1,14 @@
+{
+    "Game1": {
+      "title": "",
+      "description": "",
+      "solution": [
+        [1, 1, 1, 1],
+        [2, 2, 2, 2],
+        [3, 3, 3, 3]
+      ]
+    },
+    "Game2": "Description of Game2",
+    "Game3": "Description of Game3",
+    "Game4": "Description of Game4"
+}

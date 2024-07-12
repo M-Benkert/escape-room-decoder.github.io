@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Room Decoder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="title">
+    <h1><b>Decoder</b> <span id="game-name"></span></h1>
+</div>
+
+<div class="tags">
+    <p>Teil <span id="current-stage"></span></p>
+</div>
+
+<div class="key-container">
+    <img src="images/forms/key1.svg" alt="Key 1" class="key" data-id="1" draggable="true">
+    <img src="images/forms/key2.svg" alt="Key 2" class="key" data-id="2" draggable="true">
+    <img src="images/forms/key3.svg" alt="Key 3" class="key" data-id="3" draggable="true">
+    <img src="images/forms/key4.svg" alt="Key 4" class="key" data-id="4" draggable="true">
+    <img src="images/forms/key5.svg" alt="Key 5" class="key" data-id="5" draggable="true">
+    <img src="images/forms/key6.svg" alt="Key 6" class="key" data-id="6" draggable="true">
+</div>
+
+<div class="slot-container">
+    <div class="slot-wrapper">
+        <div class="slot" data-id="slot1"></div>
+        <button class="slot-button" onclick="removeKeyFromSlot(this)">Remove 1</button>
+    </div>
+    <div class="slot-wrapper">
+        <div class="slot" data-id="slot2"></div>
+        <button class="slot-button" onclick="removeKeyFromSlot(this)">Remove 2</button>
+    </div>
+    <div class="slot-wrapper">
+        <div class="slot" data-id="slot3"></div>
+        <button class="slot-button" onclick="removeKeyFromSlot(this)">Remove 3</button>
+    </div>
+    <div class="slot-wrapper">
+        <div class="slot" data-id="slot4"></div>
+        <button class="slot-button" onclick="removeKeyFromSlot(this)">Remove 4</button>
+    </div>
+</div>
+
+<div class="icons">
+    <button><i class="icon">&#9733;</i></button>
+    <button><i class="icon">&#9733;</i></button>
+    <button><i class="icon">&#9733;</i></button>
+    <button><i class="icon">&#9733;</i></button>
+    <button><i class="icon">&#9733;</i></button>
+    <button><i class="icon">&#9733;</i></button>
+    <button><i class="icon">&#9733;</i></button>
+    <button><i class="icon">&#9733;</i></button>
+</div>
+
+<div class="buttons">
+    <button class="submit-button" onclick="resetGame()">Reset Game</button>
+    <button class="submit-button" onclick="submitGuess()">Submit Guess</button>
+</div>
+
+
+<div id="overlay1" class="overlay" onclick="hideOverlay('overlay1')">Overlay 1</div>
+<div id="overlay2" class="overlay" onclick="hideOverlay('overlay2')">Overlay 2</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
