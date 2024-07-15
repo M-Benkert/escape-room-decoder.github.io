@@ -3,29 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Links</title>
+    <title>Escape Rooms Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #FFCB9A;
+            background-color: #2C3531;
+            box-sizing: border-box;
+        }
+        #links a {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            text-align: center;
+            border: 2px solid #FFCB9A;
+            color: #FFCB9A;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #links a:hover {
+            background-color: #FFCB9A;
+            color: #2C3531;
+        }
+    </style>
 </head>
 <body>
-    <h1>Game Links</h1>
+    <h1>Escape Rooms Overview</h1>
+
     <div id="links"></div>
 
     <script>
         // Load JSON data and create links
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener("DOMContentLoaded", function() {
             fetch("games.json")
                 .then(response => response.json())
                 .then(data => createLinks(data))
-                .catch(error => console.error('Error loading JSON:', error));
+                .catch(error => console.error("Error loading JSON:", error));
         });
 
         function createLinks(data) {
-            const linksContainer = document.getElementById('links');
+            const linksContainer = document.getElementById("links");
 
             for (const key in data) {
                 if (data.hasOwnProperty(key)) {
-                    const link = document.createElement('a');
+                    const link = document.createElement("a");
                     link.href = `decoder.html?game-name=${encodeURIComponent(key)}`;
-                    link.textContent = key;
+                    link.textContent = data[key]["title"];
                     link.style.display = "block"; // To display each link on a new line
                     linksContainer.appendChild(link);
                 }

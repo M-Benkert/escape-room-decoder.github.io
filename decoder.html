@@ -9,7 +9,9 @@
 <body>
 
 <div class="title">
-    <h1><b>Decoder</b> <span id="game-name"></span></h1>
+    <button class="back-button" onclick="location.href = 'index.html'">&#8592;</button>
+    <!-- <a href="index.html" class="back-button">&#8592;</a> -->
+    <h1><span id="game-name"></span></h1>
 </div>
 
 <div class="tags">
@@ -17,12 +19,72 @@
 </div>
 
 <div class="key-container">
-    <img src="images/forms/key1.svg" alt="Key 1" class="key" data-id="1" draggable="true">
-    <img src="images/forms/key2.svg" alt="Key 2" class="key" data-id="2" draggable="true">
-    <img src="images/forms/key3.svg" alt="Key 3" class="key" data-id="3" draggable="true">
-    <img src="images/forms/key4.svg" alt="Key 4" class="key" data-id="4" draggable="true">
-    <img src="images/forms/key5.svg" alt="Key 5" class="key" data-id="5" draggable="true">
-    <img src="images/forms/key6.svg" alt="Key 6" class="key" data-id="6" draggable="true">
+<!--    <img src="images/shapes/key1.svg" alt="Key 1" class="key" data-id="1" draggable="true">-->
+<!--    <img src="images/shapes/key2.svg" alt="Key 2" class="key" data-id="2" draggable="true">-->
+<!--    <img src="images/shapes/key3.svg" alt="Key 3" class="key" data-id="3" draggable="true">-->
+<!--    <img src="images/shapes/key4.svg" alt="Key 4" class="key" data-id="4" draggable="true">-->
+<!--    <img src="images/shapes/key5.svg" alt="Key 5" class="key" data-id="5" draggable="true">-->
+<!--    <img src="images/shapes/key6.svg" alt="Key 6" class="key" data-id="6" draggable="true">-->
+   <div class="key-span" data-id="1" draggable="true">
+        <img class="key key-numbers" src="images/numbers/key1.svg" alt="Key 1 (numbers)">
+        <img class="key key-letters hide" src="images/letters/key1.svg" alt="Key 1 (letters)">
+        <img class="key key-shapes hide" src="images/shapes/key1.svg" alt="Key 1 (shapes)">
+        <img class="key key-roman hide" src="images/roman/key1.svg" alt="Key 1 (roman)">
+        <img class="key key-bits hide" src="images/bits/key1.svg" alt="Key 1 (bits)">
+        <img class="key key-spikes hide" src="images/spikes/key1.svg" alt="Key 1 (spikes)">
+        <img class="key key-arrows hide" src="images/arrows/key1.svg" alt="Key 1 (arrows)">
+        <img class="key key-dots hide" src="images/dots/key1.svg" alt="Key 1 (dots)">
+    </div>
+    <div class="key-span" data-id="2" draggable="true">
+        <img class="key key-numbers" src="images/numbers/key2.svg" alt="Key 2 (numbers)">
+        <img class="key key-letters hide" src="images/letters/key2.svg" alt="Key 2 (letters)">
+        <img class="key key-shapes hide" src="images/shapes/key2.svg" alt="Key 2 (shapes)">
+        <img class="key key-roman hide" src="images/roman/key2.svg" alt="Key 2 (roman)">
+        <img class="key key-bits hide" src="images/bits/key2.svg" alt="Key 2 (bits)">
+        <img class="key key-spikes hide" src="images/spikes/key2.svg" alt="Key 2 (spikes)">
+        <img class="key key-arrows hide" src="images/arrows/key2.svg" alt="Key 2 (arrows)">
+        <img class="key key-dots hide" src="images/dots/key2.svg" alt="Key 2 (dots)">
+    </div>
+    <div class="key-span" data-id="3" draggable="true">
+        <img class="key key-numbers" src="images/numbers/key3.svg" alt="Key 3 (numbers)">
+        <img class="key key-letters hide" src="images/letters/key3.svg" alt="Key 3 (letters)">
+        <img class="key key-shapes hide" src="images/shapes/key3.svg" alt="Key 3 (shapes)">
+        <img class="key key-roman hide" src="images/roman/key3.svg" alt="Key 3 (roman)">
+        <img class="key key-bits hide" src="images/bits/key3.svg" alt="Key 3 (bits)">
+        <img class="key key-spikes hide" src="images/spikes/key3.svg" alt="Key 3 (spikes)">
+        <img class="key key-arrows hide" src="images/arrows/key3.svg" alt="Key 3 (arrows)">
+        <img class="key key-dots hide" src="images/dots/key3.svg" alt="Key 3 (dots)">
+    </div>
+    <div class="key-span" data-id="4" draggable="true">
+        <img class="key key-numbers" src="images/numbers/key4.svg" alt="Key 4 (numbers)">
+        <img class="key key-letters hide" src="images/letters/key4.svg" alt="Key 4 (letters)">
+        <img class="key key-shapes hide" src="images/shapes/key4.svg" alt="Key 4 (shapes)">
+        <img class="key key-roman hide" src="images/roman/key4.svg" alt="Key 4 (roman)">
+        <img class="key key-bits hide" src="images/bits/key4.svg" alt="Key 4 (bits)">
+        <img class="key key-spikes hide" src="images/spikes/key4.svg" alt="Key 4 (spikes)">
+        <img class="key key-arrows hide" src="images/arrows/key4.svg" alt="Key 4 (arrows)">
+        <img class="key key-dots hide" src="images/dots/key4.svg" alt="Key 4 (dots)">
+    </div>
+    <div class="key-span" data-id="5" draggable="true">
+        <img class="key key-numbers" src="images/numbers/key5.svg" alt="Key 5 (numbers)">
+        <img class="key key-letters hide" src="images/letters/key5.svg" alt="Key 5 (letters)">
+        <img class="key key-shapes hide" src="images/shapes/key5.svg" alt="Key 5 (shapes)">
+        <img class="key key-roman hide" src="images/roman/key5.svg" alt="Key 5 (roman)">
+        <img class="key key-bits hide" src="images/bits/key5.svg" alt="Key 5 (bits)">
+        <img class="key key-spikes hide" src="images/spikes/key5.svg" alt="Key 5 (spikes)">
+        <img class="key key-arrows hide" src="images/arrows/key5.svg" alt="Key 5 (arrows)">
+        <img class="key key-dots hide" src="images/dots/key5.svg" alt="Key 5 (dots)">
+    </div>
+    <div class="key-span" data-id="6" draggable="true">
+        <img class="key key-numbers" src="images/numbers/key6.svg" alt="Key 6 (numbers)">
+        <img class="key key-letters hide" src="images/letters/key6.svg" alt="Key 6 (letters)">
+        <img class="key key-shapes hide" src="images/shapes/key6.svg" alt="Key 6 (shapes)">
+        <img class="key key-roman hide" src="images/roman/key6.svg" alt="Key 6 (roman)">
+        <img class="key key-bits hide" src="images/bits/key6.svg" alt="Key 6 (bits)">
+        <img class="key key-spikes hide" src="images/spikes/key6.svg" alt="Key 6 (spikes)">
+        <img class="key key-arrows hide" src="images/arrows/key6.svg" alt="Key 6 (arrows)">
+        <img class="key key-dots hide" src="images/dots/key6.svg" alt="Key 6 (dots)">
+    </div>
 </div>
 
 <div class="slot-container">
@@ -45,14 +107,14 @@
 </div>
 
 <div class="icons">
-    <button><i class="icon">&#9733;</i></button>
-    <button><i class="icon">&#9733;</i></button>
-    <button><i class="icon">&#9733;</i></button>
-    <button><i class="icon">&#9733;</i></button>
-    <button><i class="icon">&#9733;</i></button>
-    <button><i class="icon">&#9733;</i></button>
-    <button><i class="icon">&#9733;</i></button>
-    <button><i class="icon">&#9733;</i></button>
+    <button onclick="switchKeyAttributes('numbers')"><i class="icon">&#9733;</i></button>
+    <button onclick="switchKeyAttributes('letters')"><i class="icon">&#9733;</i></button>
+    <button onclick="switchKeyAttributes('shapes')"><i class="icon">&#9733;</i></button>
+    <button onclick="switchKeyAttributes('roman')"><i class="icon">&#9733;</i></button>
+    <button onclick="switchKeyAttributes('bits')"><i class="icon">&#9733;</i></button>
+    <button onclick="switchKeyAttributes('spikes')"><i class="icon">&#9733;</i></button>
+    <button onclick="switchKeyAttributes('arrows')"><i class="icon">&#9733;</i></button>
+    <button onclick="switchKeyAttributes('dots')"><i class="icon">&#9733;</i></button>
 </div>
 
 <div class="buttons">

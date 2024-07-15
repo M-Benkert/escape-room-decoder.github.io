@@ -1,5 +1,6 @@
 let gameName = "Demo";
 let currentStage = 0;
+let mistakes = 0;
 let solution = [[1, 2, 3, 4], [2, 3, 4, 5], [3, 4, 5, 6]];
 
 const slots = ["slot1", "slot2", "slot3", "slot4"];
@@ -35,6 +36,7 @@ function loadGame() {
             .then(data => {
                 if (data.hasOwnProperty(gameName)) {
                     const gameDetails = data[gameName];
+                    $("#game-name").text(data[gameName]["title"]);
                     displayGameDetails(gameDetails);
                 } else {
                     displayError(`Game "${gameName}" not found.`);
@@ -44,8 +46,6 @@ function loadGame() {
     } else {
         displayError('No game specified in the query string.');
     }
-
-    $("#game-name").text(gameName);
 }
 
 function displayGameDetails(details) {
@@ -60,6 +60,12 @@ function setCurrentStage(value) {
     currentStage = value;
     saveCurrentStage();
     $("#current-stage").text(currentStage + 1);
+}
+
+function setMistakes(value) {
+    mistakes = value;
+    saveMistakes();
+
 }
 
 function showOverlay(overlayId) {
@@ -115,6 +121,27 @@ function removeAllKeysFromSlots() {
     $(".slot").each((index, slot) => removeKeyFromSlot2($(slot)));
 }
 
+const keyAttributes = [
+    "numbers",
+    "letters",
+    "shapes",
+    "roman",
+    "bits",
+    "spikes",
+    "arrows",
+    "dots",
+];
+function switchKeyAttributes(shown) {
+    if (keyAttributes.indexOf(shown) === -1)
+        return
+
+    $(".key").each((index, element) => {
+        element.classList.add("hide");
+    });
+    $(`.key-${shown}`).each((index, element) => {
+        element.classList.remove("hide");
+    });
+}
 
 // Helper functions ***********************************************************
 function getQueryString(param) {
@@ -125,11 +152,16 @@ function getQueryString(param) {
 
 const STORAGE_KEY_CURRENT_STAGE = "stage";
 function saveCurrentStage() {
-    localStorage.setItem(`${STORAGE_KEY_CURRENT_STAGE}-${gameName}`, currentStage);
+    localStorage.setItem(`${gameName}-${STORAGE_KEY_CURRENT_STAGE}`, toString(currentStage));
 }
 
 function loadCurrentStage() {
     return localStorage.getItem(`${STORAGE_KEY_CURRENT_STAGE}-${gameName}`);
+}
+
+const STORAGE_KEY_MISTAKES = "mistakes";
+function saveMistakes() {
+    localStorage.setItem(`${gameName}-${STORAGE_KEY_MISTAKES}`, toString(mistakes));
 }
 
 
@@ -145,7 +177,7 @@ $(document).ready(function() {
 
     // Event listeners for drag start
     $(document).on("dragstart", ".key",function(event) {
-        draggedElement = event.target;
+        draggedElement = $(event.target).parent();
         event.originalEvent.dataTransfer.setData("text/html", draggedElement.outerHTML);
     });
 

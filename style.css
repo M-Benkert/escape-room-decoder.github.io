@@ -2,6 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    color: #FFCB9A;
+    background-color: #2C3531;
     box-sizing: border-box;
 }
 
@@ -15,10 +17,53 @@ h1 {
     margin: 10px 0;
 }
 
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px;
+    text-align: center;
+}
+
+.title h1 {
+    margin: 10px 0;
+    flex-grow: 1;
+}
+
+.back-button {
+    position: absolute;
+    left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #FFCB9A;
+    border-color: #d9b08c;
+    border-radius: 5px;
+    color: #2C3531;
+    padding-bottom: 5px;
+}
+
+.back-button {
+    /*display: inline-block;*/
+    /*margin-top: 10px;*/
+    /*padding: 10px 20px;*/
+    /*background-color: #007BFF;*/
+    /*color: white;*/
+    /*text-decoration: none;*/
+    /*border-radius: 5px;*/
+    /*font-size: 16px;*/
+}
+
+.hide {
+    display: None;
+}
+
+
 /* tags **********************************************************************/
 .tags {
-    margin: 0 0 5px 0;
-    background-color: #000000;
+    margin-bottom: 10px;
+    background-color: #D1E8E2;
+    color: #2C3531;
 }
 
 .tags p {
@@ -83,8 +128,8 @@ h1 {
 .slot-button, .submit-button {
     margin-top: 5px;
     padding: 5px 10px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #D1E8E2;
+    color: #2C3531;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -102,6 +147,8 @@ h1 {
 }
 
 .icons button {
+    background-color: #FFCB9A;
+    border-color: #d9b08c;
     width: 10vw;
     margin: 5px 0;
     padding: 8px 10px;
