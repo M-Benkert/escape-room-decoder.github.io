@@ -1,29 +1,35 @@
+/* Variables */
+:root {
+    --primary-color: #2C3531;
+    --secondary-color: #FFCB9A;
+    --secondary-color2: #D9B08C;
+    --highlight-color: #D1E8E2;
+    --highligh-color2: #116466;
+    --highligh-color3: #042433;
+    --text-color: #555;
+    --border-color: #ccc;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #FFCB9A;
-    background-color: #2C3531;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
     box-sizing: border-box;
 }
 
-.title, .tags, .icons, .buttons {
+.title, .banner, .icons, .buttons {
     padding: 10px;
     text-align: center;
 }
 
-/* title *********************************************************************/
-h1 {
-    margin: 10px 0;
-}
-
+/* Title Section */
 .title {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 10px;
-    text-align: center;
 }
 
 .title h1 {
@@ -36,22 +42,11 @@ h1 {
     left: 10px;
     font-size: 24px;
     cursor: pointer;
-    background-color: #FFCB9A;
-    border-color: #d9b08c;
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color2);
     border-radius: 5px;
-    color: #2C3531;
+    color: var(--primary-color);
     padding-bottom: 5px;
-}
-
-.back-button {
-    /*display: inline-block;*/
-    /*margin-top: 10px;*/
-    /*padding: 10px 20px;*/
-    /*background-color: #007BFF;*/
-    /*color: white;*/
-    /*text-decoration: none;*/
-    /*border-radius: 5px;*/
-    /*font-size: 16px;*/
 }
 
 .hide {
@@ -59,18 +54,18 @@ h1 {
 }
 
 
-/* tags **********************************************************************/
-.tags {
+/* Banner Section */
+.banner {
     margin-bottom: 10px;
-    background-color: #D1E8E2;
-    color: #2C3531;
+    background-color: var(--highlight-color);
+    color: var(--primary-color);
 }
 
-.tags p {
+.banner p {
     margin: 5px 0;
 }
 
-/* keys and slots ************************************************************/
+/* Keys and Slots */
 .key-container, .slot-container {
     display: flex;
     flex-wrap: wrap;
@@ -78,20 +73,17 @@ h1 {
     padding: 10px;
 }
 
-/* keys **********************************************************************/
 .key-container {
     gap: 18px;
 }
 
 .key {
     width: 24vw;
-    max-width: 120px; /* Max width for larger screens */
-    height: auto;
+    max-width: 120px;
     cursor: pointer;
     box-sizing: border-box;
 }
 
-/* slots *********************************************************************/
 .slot-container {
     gap: 10px;
 }
@@ -104,20 +96,10 @@ h1 {
 
 .slot {
     width: 20vw;
-    max-width: 200px; /* Max width for larger screens */
+    max-width: 200px;
     height: 20vw;
-    max-height: 200px; /* Max height for larger screens */
-}
-
-.slot .key {
-    width: 18vw;
-    max-width: 195px; /* Max width for larger screens */
-    height: 18vw;
-    max-height: 195px; /* Max height for larger screens */
-}
-
-.slot {
-    border: 2px dashed #ccc;
+    max-height: 200px;
+    border: 2px dashed var(--border-color);
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -125,21 +107,24 @@ h1 {
     position: relative;
 }
 
+.slot .key {
+    width: 18vw;
+    max-width: 195px;
+    height: 18vw;
+    max-height: 195px;
+}
+
 .slot-button, .submit-button {
     margin-top: 5px;
     padding: 5px 10px;
-    background-color: #D1E8E2;
-    color: #2C3531;
+    background-color: var(--highlight-color);
+    color: var(--primary-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.slot-button:hover, .all-slots-button:hover {
-    background-color: #45a049;
-}
-
-/* keys and slots ************************************************************/
+/* Icons Section */
 .icons {
     display: flex;
     flex-wrap: wrap;
@@ -147,18 +132,21 @@ h1 {
 }
 
 .icons button {
-    background-color: #FFCB9A;
-    border-color: #d9b08c;
+    background-color: var(--highligh-color2);
+    border-color: var(--highligh-color3);
+    border-width: 1px;
     width: 10vw;
     margin: 5px 0;
-    padding: 8px 10px;
+    padding: 8px 2px;
     font-size: 16px;
 }
 
 .icon {
+    color: var(--secondary-color);
     margin-right: 5px;
 }
 
+/* General Buttons */
 .buttons {
     display: flex;
     justify-content: space-around;
@@ -171,17 +159,54 @@ h1 {
     font-size: 16px;
 }
 
+/* Overlay */
 .overlay {
     display: none;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.overlay-content {
     width: 80%;
-    height: 50%;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    font-size: 24px;
+    max-width: 500px;
     text-align: center;
-    line-height: 50vh;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s;
+}
+
+.overlay-content.correct h2 {
+    color: #28a745;
+}
+
+.overlay-content.wrong h2 {
+    color: #dc3545;
+}
+
+.overlay-content.finished h2 {
+    color: #ffc107;
+}
+
+.overlay-content p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: var(--text-color);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

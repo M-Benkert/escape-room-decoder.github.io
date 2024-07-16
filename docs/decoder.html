@@ -10,21 +10,14 @@
 
 <div class="title">
     <button class="back-button" onclick="location.href = 'index.html'">&#8592;</button>
-    <!-- <a href="index.html" class="back-button">&#8592;</a> -->
     <h1><span id="game-name"></span></h1>
 </div>
 
-<div class="tags">
+<div class="banner">
     <p>Teil <span id="current-stage"></span></p>
 </div>
 
 <div class="key-container">
-<!--    <img src="images/shapes/key1.svg" alt="Key 1" class="key" data-id="1" draggable="true">-->
-<!--    <img src="images/shapes/key2.svg" alt="Key 2" class="key" data-id="2" draggable="true">-->
-<!--    <img src="images/shapes/key3.svg" alt="Key 3" class="key" data-id="3" draggable="true">-->
-<!--    <img src="images/shapes/key4.svg" alt="Key 4" class="key" data-id="4" draggable="true">-->
-<!--    <img src="images/shapes/key5.svg" alt="Key 5" class="key" data-id="5" draggable="true">-->
-<!--    <img src="images/shapes/key6.svg" alt="Key 6" class="key" data-id="6" draggable="true">-->
    <div class="key-span" data-id="1" draggable="true">
         <img class="key key-numbers" src="images/numbers/key1.svg" alt="Key 1 (numbers)">
         <img class="key key-letters hide" src="images/letters/key1.svg" alt="Key 1 (letters)">
@@ -107,14 +100,14 @@
 </div>
 
 <div class="icons">
-    <button onclick="switchKeyAttributes('numbers')"><i class="icon">&#9733;</i></button>
-    <button onclick="switchKeyAttributes('letters')"><i class="icon">&#9733;</i></button>
-    <button onclick="switchKeyAttributes('shapes')"><i class="icon">&#9733;</i></button>
-    <button onclick="switchKeyAttributes('roman')"><i class="icon">&#9733;</i></button>
-    <button onclick="switchKeyAttributes('bits')"><i class="icon">&#9733;</i></button>
-    <button onclick="switchKeyAttributes('spikes')"><i class="icon">&#9733;</i></button>
-    <button onclick="switchKeyAttributes('arrows')"><i class="icon">&#9733;</i></button>
-    <button onclick="switchKeyAttributes('dots')"><i class="icon">&#9733;</i></button>
+    <button onclick="switchKeyAttributes('numbers')"><i class="icon">1</i></button>
+    <button onclick="switchKeyAttributes('letters')"><i class="icon">A</i></button>
+    <button onclick="switchKeyAttributes('shapes')"><i class="icon">&#9632;</i></button>
+    <button onclick="switchKeyAttributes('roman')"><i class="icon">X</i></button>
+    <button onclick="switchKeyAttributes('bits')"><i class="icon">&#8976;</i></button>
+    <button onclick="switchKeyAttributes('spikes')"><i class="icon">&#9650;</i></button>
+    <button onclick="switchKeyAttributes('arrows')"><i class="icon">&#8596;</i></button>
+    <button onclick="switchKeyAttributes('dots')"><i class="icon">&#8226;</i></button>
 </div>
 
 <div class="buttons">
@@ -123,8 +116,26 @@
 </div>
 
 
-<div id="overlay1" class="overlay" onclick="hideOverlay('overlay1')">Overlay 1</div>
-<div id="overlay2" class="overlay" onclick="hideOverlay('overlay2')">Overlay 2</div>
+<div id="correct" class="overlay" onclick="hideOverlay('correct')">
+    <div class="overlay-content correct">
+        <h2>Congratulations!</h2>
+        <p>You have it right!</p>
+    </div>
+</div>
+
+<div id="wrong" class="overlay" onclick="hideOverlay('wrong')">
+    <div class="overlay-content wrong">
+        <h2>Oops!</h2>
+        <p>That was incorrect. Try again!</p>
+    </div>
+</div>
+
+<div id="finished" class="overlay" onclick="hideOverlay('finished')">
+    <div class="overlay-content finished">
+        <h2>Well Done!</h2>
+        <p>You've successfully finished the game!</p>
+    </div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="script.js"></script>

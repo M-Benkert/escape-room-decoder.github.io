@@ -1,6 +1,6 @@
 let gameName = "Demo";
 let currentStage = 0;
-let mistakes = 0;
+let numberOfMistakes = 0;
 let solution = [[1, 2, 3, 4], [2, 3, 4, 5], [3, 4, 5, 6]];
 
 const slots = ["slot1", "slot2", "slot3", "slot4"];
@@ -13,63 +13,94 @@ let slot_elements = slots.reduce((accumulator, slot) => {
     return accumulator;
 }, {});
 
+// Helper functions ***********************************************************
+function getQueryString(param) {
+	const queryString = window.location.search;
+	const params = new URLSearchParams(queryString);
+	return params.get(param);
+}
+
+const STORAGE_KEY_CURRENT_STAGE = "stage";
+function saveCurrentStage() {
+    localStorage.setItem(`${gameName}-${STORAGE_KEY_CURRENT_STAGE}`, currentStage.toString());
+}
+
+function loadCurrentStage() {
+    return localStorage.getItem(`${gameName}-${STORAGE_KEY_CURRENT_STAGE}`);
+}
+
+const STORAGE_KEY_NUMBER_OF_MISTAKES = "mistakes";
+function saveNumberOfMistakes() {
+    localStorage.setItem(`${gameName}-${STORAGE_KEY_NUMBER_OF_MISTAKES}`, numberOfMistakes.toString());
+}
+
+function loadNumberOfMistakes() {
+    return localStorage.getItem(`${gameName}-${STORAGE_KEY_NUMBER_OF_MISTAKES}`);
+}
 
 // Game functions *************************************************************
-function loadGame() {
-
-
-    // Set attribute values
-    const storedGameName = getQueryString("game-name");
-    if (storedGameName !== null) {
-        gameName = storedGameName;
-    }
-
-    const storedCurrentStage = loadCurrentStage();
-    if (storedCurrentStage !== null) {
-        currentStage = parseInt(storedCurrentStage, 10);
-    }
-    setCurrentStage(currentStage);
-
-    if (gameName) {
-        fetch('games.json')
-            .then(response => response.json())
-            .then(data => {
-                if (data.hasOwnProperty(gameName)) {
-                    const gameDetails = data[gameName];
-                    $("#game-name").text(data[gameName]["title"]);
-                    displayGameDetails(gameDetails);
-                } else {
-                    displayError(`Game "${gameName}" not found.`);
-                }
-            })
-            .catch(error => console.error('Error loading JSON:', error));
-    } else {
-        displayError('No game specified in the query string.');
-    }
-}
-
-function displayGameDetails(details) {
-    solution = details["solution"];
-}
-
-function displayError(message) {
-    console.log(message)
-}
-
 function setCurrentStage(value) {
     currentStage = value;
     saveCurrentStage();
     $("#current-stage").text(currentStage + 1);
 }
 
-function setMistakes(value) {
-    mistakes = value;
-    saveMistakes();
+function setNumberOfMistakes(value) {
+    numberOfMistakes = value;
+    saveNumberOfMistakes();
 
 }
 
+function loadGame() {
+    // load game name
+    const storedGameName = getQueryString("game-name");
+    if (storedGameName !== null) {
+        gameName = storedGameName;
+    }
+
+    // load current stage
+    const storedCurrentStage = loadCurrentStage();
+    if (storedCurrentStage !== null) {
+        currentStage = parseInt(storedCurrentStage, 10);
+    }
+
+    // load mistakes
+    const storedNumberOfMistakes = loadNumberOfMistakes();
+    if (storedNumberOfMistakes !== null) {
+        numberOfMistakes = parseInt(storedNumberOfMistakes, 10);
+    }
+
+    // set placeholder text
+    $("#game-name").text(gameName);
+    setCurrentStage(currentStage);
+    setNumberOfMistakes(numberOfMistakes);
+
+    // load game details
+    loadGameDetails()
+}
+
+function loadGameDetails() {
+    fetch("games.json")
+        .then(response => response.json())
+        .then(data => {
+            if (data.hasOwnProperty(gameName)) {
+                setGameDetails(data[gameName]);
+            } else {
+                console.log(`Game "${gameName}" not found.`);
+            }
+        })
+        .catch(error => console.error("Error loading JSON:", error));
+}
+
+function setGameDetails(details) {
+    const title = details["title"];
+    solution = details["solution"];
+
+    $("#game-name").text(title);
+}
+
 function showOverlay(overlayId) {
-    document.getElementById(overlayId).style.display = 'block';
+    document.getElementById(overlayId).style.display = 'flex';
 }
 
 function hideOverlay(overlayId) {
@@ -82,6 +113,11 @@ function resetGame() {
 }
 
 function submitGuess() {
+    if (currentStage >= solution.length) {
+        showOverlay("finished");
+        return;
+    }
+
     if (!slots.every(slot => slot_elements[slot]["keyId"] !== null))
         return;
 
@@ -89,11 +125,15 @@ function submitGuess() {
         const guess = slot_elements[slot]["keyId"];
         return guess === solution[currentStage][index];
     })) {
-        showOverlay("overlay2");
+        showOverlay("wrong");
         return;
     }
 
-        showOverlay("overlay1");
+    if (currentStage + 1 < solution.length) {
+        showOverlay("correct");
+    } else {
+        showOverlay("finished")
+    }
     setCurrentStage(currentStage + 1);
     removeAllKeysFromSlots();
 }
@@ -104,13 +144,12 @@ function removeKeyFromSlot(elem) {
 }
 
 function removeKeyFromSlot2(slot) {
-    console.log(slot)
     const slotId = slot.data("id");
 
     if (slot_elements[slotId]["keyId"] !== null) {
         const keyId = slot_elements[slotId]["keyId"];
 
-        slot.find(".key").remove();
+        slot.find(".key-span").remove();
         slot_elements[slotId]["keyId"] = null;
 
         console.log(`Key ${keyId} removed from ${slotId}`);
@@ -142,28 +181,6 @@ function switchKeyAttributes(shown) {
         element.classList.remove("hide");
     });
 }
-
-// Helper functions ***********************************************************
-function getQueryString(param) {
-	const queryString = window.location.search;
-	const params = new URLSearchParams(queryString);
-	return params.get(param);
-}
-
-const STORAGE_KEY_CURRENT_STAGE = "stage";
-function saveCurrentStage() {
-    localStorage.setItem(`${gameName}-${STORAGE_KEY_CURRENT_STAGE}`, toString(currentStage));
-}
-
-function loadCurrentStage() {
-    return localStorage.getItem(`${STORAGE_KEY_CURRENT_STAGE}-${gameName}`);
-}
-
-const STORAGE_KEY_MISTAKES = "mistakes";
-function saveMistakes() {
-    localStorage.setItem(`${gameName}-${STORAGE_KEY_MISTAKES}`, toString(mistakes));
-}
-
 
 // On load ********************************************************************
 $(document).ready(function() {
