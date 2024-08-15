@@ -1,339 +1,437 @@
 {
-    "prison-break": {
-      "title": "Prison Break",
-      "category": "base1",
-      "solution": [
-        [6, 2, 5, 1],
-        [5, 2, 1, 6],
-        [5, 1, 5, 6]
-      ]
+    "nuclear-countdown": {
+        "title": "Nuclear Countdown",
+        "solution": [
+            [1, 6, 2, 2],
+            [5, 4, 1, 1],
+            [5, 2, 3, 4]
+        ],
+        "categories": [
+            "base1"
+        ]
     },
-    "virus": {
-      "title": "Virus",
-      "category": "base1",
-      "solution": [
-        [3, 6, 1, 5],
-        [4, 1, 5, 6],
-        [1, 3, 4, 1]
-      ]
+    "prison-break": {
+        "title": "Prison Break",
+        "solution": [
+            [6, 2, 5, 1],
+            [5, 2, 1, 6],
+            [5, 1, 5, 6]
+        ],
+        "categories": [
+            "base1"
+        ]
     },
     "temple-of-the-aztec": {
-      "title": "Temple of the Aztec",
-      "category": "base1",
-      "solution": [
-        [4, 5, 6, 3],
-        [1, 3, 6, 2],
-        [5, 4, 6, 3]
-      ]
+        "title": "Temple of the Aztec",
+        "solution": [
+            [4, 5, 6, 3],
+            [1, 3, 6, 2],
+            [5, 4, 6, 3]
+        ],
+        "categories": [
+            "base1"
+        ]
     },
-    "nuclear-countdown": {
-      "title": "Nuclear Countdown",
-      "category": "base1",
-      "solution": [
-        [1, 6, 2, 2],
-        [5, 4, 1, 1],
-        [5, 2, 3, 4]
-      ]
-    },
-    "wild-west-express": {
-      "title": "Wild West Express",
-      "category": "base2",
-      "solution": [
-        [4, 6, 5, 3],
-        [4, 3, 5, 2],
-        [5, 5, 2, 4]
-      ]
-    },
-    "the-break-in": {
-      "title": "The Break-in",
-      "category": "base2",
-      "solution": [
-        [1, 4, 5, 4],
-        [5, 4, 6, 1],
-        [6, 3, 6, 2]
-      ]
-    },
-    "another-dimension": {
-      "title": "Another Dimension",
-      "category": "base2",
-      "solution": [
-        [1, 1, 3, 5],
-        [6, 6, 1, 5],
-        [0, 0, 0, 0]
-      ]
+    "virus": {
+        "title": "Virus",
+        "solution": [
+            [3, 6, 1, 5],
+            [4, 1, 5, 6],
+            [1, 3, 4, 1]
+        ],
+        "categories": [
+            "base1"
+        ]
     },
     "alice-in-wonderland": {
-      "title": "Alice in Wonderland",
-      "category": "base2",
-      "solution": [
-        [6, 1, 5, 3],
-        [3, 5, 4, 3],
-        [6, 1, 1, 5]
-      ]
+        "title": "Alice in Wonderland",
+        "solution": [
+            [6, 1, 5, 3],
+            [3, 5, 4, 3],
+            [6, 1, 1, 5]
+        ],
+        "categories": [
+            "base2"
+        ]
     },
-    "murder-mystery": {
-      "title": "Murder Mystery",
-      "solution": [
-        [4, 6, 5, 3],
-        [6, 2, 3, 4],
-        [5, 6, 6, 6]
-      ]
+    "another-dimension": {
+        "title": "Another Dimension",
+        "solution": [
+            [1, 1, 3, 5],
+            [6, 6, 1, 5],
+            [0, 0, 0, 0]
+        ],
+        "categories": [
+            "base2"
+        ]
     },
-    "casino": {
-      "title": "Casino",
-      "solution": [
-        [6, 2, 5, 1],
-        [1, 6, 5, 5],
-        [5, 2, 1, 6],
-        [2, 1, 3, 1]
-      ]
+    "the-break-in": {
+        "title": "The Break-in",
+        "solution": [
+            [1, 4, 5, 4],
+            [5, 4, 6, 1],
+            [6, 3, 6, 2]
+        ],
+        "categories": [
+            "base2"
+        ]
     },
-    "the-dentist": {
-      "title": "The Dentist",
-      "solution": [
-        [2, 3, 6, 1],
-        [3, 4, 1, 3],
-        [0, 0, 0, 0]
-      ]
-    },
-    "the-magician": {
-      "title": "The Magician",
-      "solution": [
-        [5, 3, 5, 3],
-        [4, 2, 5, 4],
-        [4, 4, 3, 6]
-      ]
-    },
-    "redbeards-gold": {
-      "title": "Redbeard's Gold",
-      "solution": [
-        [4, 4, 3, 2],
-        [1, 5, 5, 3],
-        [3, 2, 2, 6]
-      ]
-    },
-    "da-vincis-telescope": {
-      "title": "Da Vinci's Telescope",
-      "solution": [
-        [1, 6, 2, 2],
-        [2, 6, 1, 5],
-        [5, 4, 6, 3]
-      ]
-    },
-    "tomb-robbers": {
-      "title": "Tomb Robbers",
-      "solution": [
-        [4, 5, 6, 3],
-        [1, 3, 6, 2],
-        [6, 3, 6, 2]
-      ]
-    },
-    "secret-agent": {
-      "title": "Secret Agent",
-      "solution": [
-        [6, 2, 5, 1],
-        [1, 5, 5, 3],
-        [2, 5, 4, 6]
-      ]
-    },
-    "welcome-to-funland": {
-      "title": "Welcome to Funland",
-      "solution": [
-        [6, 1, 5, 3],
-        [2, 5, 1, 2],
-        [4, 4, 3, 6]
-      ]
-    },
-    "space-station": {
-      "title": "Space Station",
-      "solution": [
-        [2, 3, 6, 1],
-        [2, 6, 1, 5],
-        [6, 4, 1, 2]
-      ]
-    },
-    "dawn-of-the-zombies": {
-      "title": "Dawn of the Zombies",
-      "solution": [
-        [3, 2, 1, 6],
-        [2, 5, 1, 2],
-        [5, 4, 6, 3]
-      ]
-    },
-    "panic-on-the-titanic": {
-      "title": "Panic on the Titanic",
-      "solution": [
-        [4, 3, 3, 2],
-        [5, 4, 1, 1],
-        [6, 3, 6, 2]
-      ]
-    },
-    "submarine": {
-      "title": "Submarine",
-      "category": "virtual-reality",
-      "solution": [
-        [6, 6, 4, 2],
-        [3, 1, 6, 6],
-        [4, 1, 2, 3]
-      ]
-    },
-    "down-below": {
-      "title": "Down Below",
-      "category": "demo+virtual-reality",
-      "solution": [
-        [2, 3, 6, 1]
-      ]
-    },
-    "behind-enemy-lines": {
-      "title": "Behind Enemy Lines",
-      "category": "virtual-reality",
-      "solution": [
-        [3, 2, 1, 6],
-        [2, 6, 1, 5],
-        [2, 1, 3, 1]
-      ]
+    "wild-west-express": {
+        "title": "Wild West Express",
+        "solution": [
+            [4, 6, 5, 3],
+            [4, 3, 5, 2],
+            [5, 5, 2, 4]
+        ],
+        "categories": [
+            "base2"
+        ]
     },
     "the-basement": {
-      "title": "The Basement",
-      "category": "demo+base2",
-      "solution": [
-        [3, 6, 1, 5]
-      ]
-    },
-    "time-travel-0": {
-      "title": "The Present",
-      "category": "time-travel",
-      "solution": [
-        [6, 2, 5, 1],
-        [1, 3, 6, 2],
-        [1, 4, 2, 2]
-      ]
-    },
-    "time-travel-1": {
-      "title": "The Past",
-      "category": "time-travel",
-      "solution": [
-        [3, 2, 1, 6],
-        [2, 6, 1, 4],
-        [6, 4, 1, 2]
-      ]
-    },
-    "time-travel-2": {
-      "title": "The Future",
-      "category": "time-travel",
-      "solution": [
-        [6, 1, 5, 3],
-        [5, 2, 1, 6],
-        [2, 5, 4, 6]
-      ]
-    },
-    "house-arrest": {
-      "title": "House Arrest",
-      "category": "demo",
-      "solution": [
-        [4, 6, 2, 4]
-      ]
+        "title": "The Basement",
+        "solution": [
+            [3, 6, 1, 5]
+        ],
+        "categories": [
+            "demo",
+            "base2"
+        ]
     },
     "jumanji-0": {
-      "title": "Das Trommeln aus dem Wandschrank",
-      "category": "jumanji",
-      "solution": [
-        [3, 6, 1, 5],
-        [4, 1, 5, 6],
-        [6, 4, 1, 2]
-      ]
+        "title": "Das Trommeln aus dem Wandschrank",
+        "solution": [
+            [3, 6, 1, 5],
+            [4, 1, 5, 6],
+            [6, 4, 1, 2]
+        ],
+        "categories": [
+            "jumanji"
+        ]
     },
     "jumanji-1": {
-      "title": "Die Suche nach Jesse",
-      "category": "jumanji",
-      "solution": [
-        [1, 4, 5, 4],
-        [4, 3, 5, 2],
-        [6, 4, 1, 2]
-      ]
+        "title": "Die Suche nach Jesse",
+        "solution": [
+            [1, 4, 5, 4],
+            [4, 3, 5, 2],
+            [6, 4, 1, 2]
+        ],
+        "categories": [
+            "jumanji"
+        ]
     },
     "jumanji-2": {
-      "title": "Brecht den Fluch",
-      "category": "jumanji",
-      "solution": [
-        [1, 6, 2, 2],
-        [4, 2, 5, 2],
-        [5, 2, 3, 4]
-      ]
+        "title": "Brecht den Fluch",
+        "solution": [
+            [1, 6, 2, 2],
+            [4, 2, 5, 2],
+            [5, 2, 3, 4]
+        ],
+        "categories": [
+            "jumanji"
+        ]
     },
-    "kidnapped": {
-      "title": "Kidnapped",
-      "category": "demo+duo-prison-island-asylum",
-      "solution": [
-        [6, 1, 5, 3]
-      ]
+    "time-travel-0": {
+        "title": "The Present",
+        "solution": [
+            [6, 2, 5, 1],
+            [1, 3, 6, 2],
+            [1, 4, 2, 2]
+        ],
+        "categories": [
+            "time-travel"
+        ]
     },
-    "bloody-mary": {
-      "title": "Bloody Mary",
-      "category": "demo+duo-horror",
-      "solution": [
-        [4, 5, 6, 3]
-      ]
+    "time-travel-1": {
+        "title": "The Past",
+        "solution": [
+            [3, 2, 1, 6],
+            [2, 6, 1, 4],
+            [6, 4, 1, 2]
+        ],
+        "categories": [
+            "time-travel"
+        ]
     },
-    "prison-island": {
-      "title": "Prison Island",
-      "category": "duo-prison-island-asylum",
-      "solution": [
-        [6, 2, 5, 1],
-        [5, 2, 1, 6],
-        [5, 1, 5, 6]
-      ]
+    "time-travel-2": {
+        "title": "The Future",
+        "solution": [
+            [6, 1, 5, 3],
+            [5, 2, 1, 6],
+            [2, 5, 4, 6]
+        ],
+        "categories": [
+            "time-travel"
+        ]
+    },
+    "house-arrest": {
+        "title": "House Arrest",
+        "solution": [
+            [4, 6, 2, 4]
+        ],
+        "categories": [
+            "time-travel",
+            "demo"
+        ]
+    },
+    "behind-enemy-lines": {
+        "title": "Behind Enemy Lines",
+        "solution": [
+            [3, 2, 1, 6],
+            [2, 6, 1, 5],
+            [2, 1, 3, 1]
+        ],
+        "categories": [
+            "virtual-reality"
+        ]
+    },
+    "submarine": {
+        "title": "Submarine",
+        "solution": [
+            [6, 6, 4, 2],
+            [3, 1, 6, 6],
+            [4, 1, 2, 3]
+        ],
+        "categories": [
+            "virtual-reality"
+        ]
+    },
+    "down-below": {
+        "title": "Down Below",
+        "solution": [
+            [2, 3, 6, 1]
+        ],
+        "categories": [
+            "demo",
+            "virtual-reality"
+        ]
     },
     "asylum": {
-      "title": "Asylum",
-      "category": "duo-prison-island-asylum",
-      "solution": [
-        [3, 2, 1, 6],
-        [6, 2, 3, 4],
-        [3, 6, 3, 5]
-      ]
+        "title": "Asylum",
+        "solution": [
+            [3, 2, 1, 6],
+            [6, 2, 3, 4],
+            [3, 6, 3, 5]
+        ],
+        "categories": [
+            "duo-prison-island-asylum"
+        ]
+    },
+    "prison-island": {
+        "title": "Prison Island",
+        "solution": [
+            [6, 2, 5, 1],
+            [5, 2, 1, 6],
+            [5, 1, 5, 6]
+        ],
+        "categories": [
+            "duo-prison-island-asylum"
+        ]
+    },
+    "kidnapped": {
+        "title": "Kidnapped",
+        "solution": [
+            [6, 1, 5, 3]
+        ],
+        "categories": [
+            "demo",
+            "duo-prison-island-asylum"
+        ]
     },
     "house-by-the-lake": {
-      "title": "House by the Lake",
-      "category": "duo-horror",
-      "solution": [
-        [4, 6, 5, 3],
-        [5, 4, 6, 1],
-        [3, 2, 2, 6]
-      ]
+        "title": "House by the Lake",
+        "solution": [
+            [4, 6, 5, 3],
+            [5, 4, 6, 1],
+            [3, 2, 2, 6]
+        ],
+        "categories": [
+            "duo-horror"
+        ]
     },
     "the-little-girl": {
-      "title": "The Little Girl",
-      "category": "duo-horror",
-      "solution": [
-        [3, 6, 1, 5],
-        [3, 5, 4, 3],
-        [1, 3, 4, 1]
-      ]
+        "title": "The Little Girl",
+        "solution": [
+            [3, 6, 1, 5],
+            [3, 5, 4, 3],
+            [1, 3, 4, 1]
+        ],
+        "categories": [
+            "duo-horror"
+        ]
     },
-    "isolation": {
-      "title": "Isolation",
-      "category": "demo+duo-sultan-vikings",
-      "solution": [
-        [4, 6, 5, 3]
-      ]
+    "bloody-mary": {
+        "title": "Bloody Mary",
+        "solution": [
+            [4, 5, 6, 3]
+        ],
+        "categories": [
+            "demo",
+            "duo-horror"
+        ]
     },
     "dagger-of-the-sultan": {
-      "title": "Dagger of the Sultan",
-      "category": "duo-sultan-vikings",
-      "solution": [
-        [5, 3, 5, 3],
-        [6, 6, 1, 5],
-        [2, 1, 3, 1]
-      ]
+        "title": "Dagger of the Sultan",
+        "solution": [
+            [5, 3, 5, 3],
+            [6, 6, 1, 5],
+            [2, 1, 3, 1]
+        ],
+        "categories": [
+            "duo-sultan-vikings"
+        ]
     },
     "viking-funeral": {
-      "title": "Viking-Funeral",
-      "category": "duo-sultan-vikings",
-      "solution": [
-        [4, 4, 2, 2],
-        [3, 3, 2, 6],
-        [2, 4, 4, 1]
-      ]
+        "title": "Viking-Funeral",
+        "solution": [
+            [4, 4, 2, 2],
+            [3, 3, 2, 6],
+            [2, 4, 4, 1]
+        ],
+        "categories": [
+            "duo-sultan-vikings"
+        ]
+    },
+    "isolation": {
+        "title": "Isolation",
+        "solution": [
+            [4, 6, 5, 3]
+        ],
+        "categories": [
+            "demo",
+            "duo-sultan-vikings"
+        ]
+    },
+    "casino": {
+        "title": "Casino",
+        "solution": [
+            [6, 2, 5, 1],
+            [1, 6, 5, 5],
+            [5, 2, 1, 6],
+            [2, 1, 3, 1]
+        ],
+        "categories": [
+            "extension"
+        ]
+    },
+    "da-vincis-telescope": {
+        "title": "Da Vinci's Telescope",
+        "solution": [
+            [1, 6, 2, 2],
+            [2, 6, 1, 5],
+            [5, 4, 6, 3]
+        ],
+        "categories": [
+            "extension"
+        ]
+    },
+    "dawn-of-the-zombies": {
+        "title": "Dawn of the Zombies",
+        "solution": [
+            [3, 2, 1, 6],
+            [2, 5, 1, 2],
+            [5, 4, 6, 3]
+        ],
+        "categories": [
+            "extension"
+        ]
+    },
+    "murder-mystery": {
+        "title": "Murder Mystery",
+        "solution": [
+            [4, 6, 5, 3],
+            [6, 2, 3, 4],
+            [5, 6, 6, 6]
+        ],
+        "categories": [
+            "extension"
+        ]
+    },
+    "panic-on-the-titanic": {
+        "title": "Panic on the Titanic",
+        "solution": [
+            [4, 3, 3, 2],
+            [5, 4, 1, 1],
+            [6, 3, 6, 2]
+        ],
+        "categories": [
+            "extension"
+        ]
+    },
+    "redbeards-gold": {
+        "title": "Redbeard's Gold",
+        "solution": [
+            [4, 4, 3, 2],
+            [1, 5, 5, 3],
+            [3, 2, 2, 6]
+        ],
+        "categories": [
+            "extension"
+        ]
+    },
+    "secret-agent": {
+        "title": "Secret Agent",
+        "solution": [
+            [6, 2, 5, 1],
+            [1, 5, 5, 3],
+            [2, 5, 4, 6]
+        ],
+        "categories": [
+            "extension"
+        ]
+    },
+    "space-station": {
+        "title": "Space Station",
+        "solution": [
+            [2, 3, 6, 1],
+            [2, 6, 1, 5],
+            [6, 4, 1, 2]
+        ],
+        "categories": [
+            "extension"
+        ]
+    },
+    "the-dentist": {
+        "title": "The Dentist",
+        "solution": [
+            [2, 3, 6, 1],
+            [3, 4, 1, 3],
+            [0, 0, 0, 0]
+        ],
+        "categories": [
+            "extension"
+        ]
+    },
+    "the-magician": {
+        "title": "The Magician",
+        "solution": [
+            [5, 3, 5, 3],
+            [4, 2, 5, 4],
+            [4, 4, 3, 6]
+        ],
+        "categories": [
+            "extension"
+        ]
+    },
+    "tomb-robbers": {
+        "title": "Tomb Robbers",
+        "solution": [
+            [4, 5, 6, 3],
+            [1, 3, 6, 2],
+            [6, 3, 6, 2]
+        ],
+        "categories": [
+            "extension"
+        ]
+    },
+    "welcome-to-funland": {
+        "title": "Welcome to Funland",
+        "solution": [
+            [6, 1, 5, 3],
+            [2, 5, 1, 2],
+            [4, 4, 3, 6]
+        ],
+        "categories": [
+            "extension"
+        ]
     }
 }

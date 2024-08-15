@@ -75,6 +75,7 @@ body {
 
 .key-container {
     gap: 18px;
+    font-family: Cambria, Serif, serif;
 }
 
 .key {

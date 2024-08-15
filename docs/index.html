@@ -8,11 +8,12 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 0 10px;
             color: #FFCB9A;
             background-color: #2C3531;
             box-sizing: border-box;
         }
+
         #links a {
             display: block;
             width: 80%;
@@ -29,35 +30,78 @@
             background-color: #FFCB9A;
             color: #2C3531;
         }
+
+        h3 {
+            padding: 0 5vw;
+        }
     </style>
 </head>
 <body>
-    <h1>Escape Rooms Overview</h1>
+<h1>Escape Rooms Overview</h1>
 
-    <div id="links"></div>
+<div id="links"></div>
 
-    <script>
-        // Load JSON data and create links
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch("games.json")
-                .then(response => response.json())
-                .then(data => createLinks(data))
-                .catch(error => console.error("Error loading JSON:", error));
-        });
+<script>
+    // Load JSON data and create links
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch("games.json")
+            .then(response => response.json())
+            .then(data => createLinks(data))
+            .catch(error => console.error("Error loading JSON:", error));
+    });
 
-        function createLinks(data) {
-            const linksContainer = document.getElementById("links");
+    function createLinks(data) {
+        const linksContainer = document.getElementById("links");
 
-            for (const key in data) {
-                if (data.hasOwnProperty(key)) {
+        // Create an object to group links by category
+        const categories = {};
+        const cat_titles = {
+            "base1": "Grundspiel",
+            "base2": "Grundspiel 2",
+            "jumanji": "Jumanji",
+            "time-travel": "Time Travel",
+            "virtual-reality": "Virtual Reality",
+            "duo-prison-island-asylum": "DUO Prison Island & Asylum",
+            "duo-horror": "DUO Horror",
+            "duo-sultan-vikings": "DUO Sultan & Vikings",
+            "extension": "Extensions",
+            "demo": "Demos"
+        };
+
+        // Iterate over the data and group links by category
+        for (const key in data) {
+            if (data.hasOwnProperty(key)) {
+                const game = data[key];
+                const categories2 = game["categories"];
+
+                categories2.forEach(category => {
+                    if (!categories[category]) {
+                        categories[category] = [];
+                    }
+
                     const link = document.createElement("a");
                     link.href = `decoder.html?game-name=${encodeURIComponent(key)}`;
-                    link.textContent = data[key]["title"];
+                    link.textContent = game["title"];
                     link.style.display = "block"; // To display each link on a new line
-                    linksContainer.appendChild(link);
-                }
+
+                    categories[category].push(link);
+                });
             }
         }
-    </script>
+
+        // Create sub headlines and append the links under each category
+        for (const category in categories) {
+            if (categories.hasOwnProperty(category)) {
+                const sub_headline = document.createElement("h3");
+                sub_headline.textContent = cat_titles[category];
+                linksContainer.appendChild(sub_headline);
+
+                categories[category].forEach(link => {
+                    linksContainer.appendChild(link);
+                });
+            }
+        }
+    }
+</script>
 </body>
 </html>
